@@ -1,0 +1,96 @@
+Hotel Room Booking System
+
+📌 Description
+
+The Hotel Room Booking System is a Java-based application developed using JDBC to manage hotel room reservations. This project allows users to view available rooms, book rooms, and manage booking records efficiently.
+
+It demonstrates how real-world hotel management systems handle customer bookings and room availability using a database.
+
+🎯 Objective
+To understand database connectivity using JDBC
+To implement real-time booking functionality
+To manage room availability and customer details
+To build a practical backend project using Java
+🛠️ Technologies Used
+Java
+JDBC (Java Database Connectivity)
+MySQL / SQL Server
+VS Code / Eclipse
+MySQL Connector JAR
+⚙️ Features
+🛏️ View available rooms
+📅 Book a room
+❌ Cancel booking
+📋 View booking details
+🔍 Search booking by ID
+🔄 Update booking information
+🗂️ Project Structure
+hotelroomDBProject/
+│
+├── MainApp.java          # Entry point of the application
+├── Room.java             # Room model class
+├── Booking.java          # Booking model class
+├── HotelDAO.java         # Handles database operations
+├── DBConnection.java     # Database connection setup
+🔗 Database Setup
+
+Create Database:
+
+CREATE DATABASE hotel_db;
+
+Create Rooms Table:
+
+CREATE TABLE rooms (
+    room_id INT PRIMARY KEY IDENTITY(1,1),  -- SQL Server
+    room_type VARCHAR(50),
+    price DOUBLE,
+    is_available BIT
+);
+
+Create Booking Table:
+
+CREATE TABLE bookings (
+    booking_id INT PRIMARY KEY IDENTITY(1,1),
+    customer_name VARCHAR(100),
+    room_id INT,
+    booking_date DATE,
+    FOREIGN KEY (room_id) REFERENCES rooms(room_id)
+);
+
+⚠️ For MySQL, replace IDENTITY(1,1) with AUTO_INCREMENT and BIT with BOOLEAN.
+
+🔌 Setup Instructions
+Install Java (JDK 8 or above)
+Install MySQL or SQL Server
+Download MySQL Connector JAR
+Add the JAR file to your project
+Configure database credentials in your code
+▶️ How to Run
+Clone the repository
+git clone https://github.com/your-username/hotelroomDBProject.git
+Open the project in VS Code or Eclipse
+Add JDBC driver
+Run MainApp.java
+📷 Sample Output
+1. View Rooms
+2. Book Room
+3. Cancel Booking
+4. View Bookings
+5. Exit
+
+Enter your choice:
+📚 Learning Outcomes
+Learned how to build a real-time booking system
+Understood database relationships (Foreign Keys)
+Improved knowledge of JDBC operations
+Gained experience in handling user inputs and database transactions
+🚀 Future Improvements
+Add GUI using Java Swing / JavaFX
+Implement payment integration
+Add user login and authentication
+Include room categories and advanced filtering
+Convert into a web-based application
+🙌 Author
+
+Manikanta
+📧 ammuturimanikanta@gmail.com
